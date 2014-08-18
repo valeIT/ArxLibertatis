@@ -498,6 +498,18 @@ static void MainMenuOptionVideoCreate(CWindowMenuConsole * console, Vec2i size) 
 	}
 	
 	{
+	HorizontalPanelWidget * pc = new HorizontalPanelWidget;
+	std::string szMenuText = getLocalised("system_menus_options_video_gamma");
+	TextWidget * txt = new TextWidget(-1, hFontMenu, szMenuText, Vec2i(RATIO_X(20), 0.f), NOP);
+	txt->SetCheckOff();
+	pc->AddElement(txt);
+	SliderWidget * me = new SliderWidget(BUTTON_MENUOPTIONSVIDEO_GAMMA, Vec2i(RATIO_X(200), 0));
+	me->setValue(config.video.gamma);
+	pc->AddElement(me);
+	console->AddMenuCenter(pc);
+	}
+	
+	{
 	std::string szMenuText = getLocalised("system_menus_options_video_antialiasing", "antialiasing");
 	szMenuText += " ";
 	TextWidget * text = new TextWidget(-1, hFontMenu, szMenuText, Vec2i(RATIO_X(20), 0), NOP);

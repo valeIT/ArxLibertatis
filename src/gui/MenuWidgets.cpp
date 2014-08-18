@@ -2715,6 +2715,9 @@ bool SliderWidget::OnMouseClick() {
 	case BUTTON_MENUOPTIONSVIDEO_FOG:
 		ARXMenu_Options_Video_SetFogDistance(m_value);
 		break;
+	case BUTTON_MENUOPTIONSVIDEO_GAMMA:
+		ARXMenu_Options_Video_SetGamma(m_value);
+		break;
 	// MENUOPTIONS_AUDIO
 	case BUTTON_MENUOPTIONSAUDIO_MASTER:
 		ARXMenu_Options_Audio_SetMasterVolume(m_value);
