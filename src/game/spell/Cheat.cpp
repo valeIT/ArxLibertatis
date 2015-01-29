@@ -269,11 +269,12 @@ void ApplyCurPNux() {
 
 	MakeSpCol();
 	sp_max_ch = "! PhilNux & Gluonne !";
-
-	SPECIAL_PNUX = (SPECIAL_PNUX + 1) % 3;
-
-	// TODO-RENDERING: Create a post-processing effect for that cheat... see original source...
-
+	
+	SPECIAL_PNUX += 1;
+	if(SPECIAL_PNUX > 3) {
+		SPECIAL_PNUX = 0;
+	}
+	
 	cur_pnux=0;
 	sp_max_start=arxtime.get_updated();
 }
